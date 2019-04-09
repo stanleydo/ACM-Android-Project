@@ -16,6 +16,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.example.acm_app_stanleydo.Resources;
+import com.example.acm_app_stanleydo.Announcements;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -76,21 +78,22 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.home) {
+
         } else if (id == R.id.Announcements) {
-            Announcements announcements = new Announcements();
-            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, announcements);
+            Announcements mainFragment = new Announcements();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, mainFragment);
             fragmentTransaction.commit();
         } else if (id == R.id.Resources) {
             Resources resources = new Resources();
-            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, resources);
             fragmentTransaction.commit();
+
         } else if (id == R.id.Aboutus) {
-            Aboutus aboutus = new Aboutus();
-            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, aboutus);
-            fragmentTransaction.commit();
+
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
