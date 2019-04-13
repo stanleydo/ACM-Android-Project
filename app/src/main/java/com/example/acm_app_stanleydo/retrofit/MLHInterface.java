@@ -1,5 +1,7 @@
 package com.example.acm_app_stanleydo;
 
+import com.example.acm_app_stanleydo.models.Event;
+
 import java.util.List;
 
 import retrofit2.Call;

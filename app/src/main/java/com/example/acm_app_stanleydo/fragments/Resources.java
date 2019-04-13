@@ -7,16 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import com.example.acm_app_stanleydo.R;
-import com.example.acm_app_stanleydo.Event;
-import com.example.acm_app_stanleydo.APIClient;
-import com.example.acm_app_stanleydo.MLHInterface;
-
-import com.example.acm_app_stanleydo.RecyclerHackathons;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
