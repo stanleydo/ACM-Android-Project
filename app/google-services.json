@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "282751924597",
+    "firebase_url": "https://acmappstanleydo.firebaseio.com",
+    "project_id": "acmappstanleydo",
+    "storage_bucket": "acmappstanleydo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282751924597:android:c92ebdff69f93343",
+        "android_client_info": {
+          "package_name": "com.example.acm_app_stanleydo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282751924597-3l6oojeeb1hrk0mh1qmf1e5qv4vfu455.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.acm_app_stanleydo",
+            "certificate_hash": "d1598fe73a6182dab4dbec3b2d066af7f3451199"
+          }
+        },
+        {
+          "client_id": "282751924597-gbbboi0kp01sgnscbspl5sjibm3svv0u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.acm_app_stanleydo",
+            "certificate_hash": "1eb7e5abf1cd65061566261989220bba79ebfcc1"
+          }
+        },
+        {
+          "client_id": "282751924597-udm1dss248mrge5uf9k94dq7cogsot20.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHz-g9QV1PuRLowAqRfclSzaeQELBmMPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282751924597-udm1dss248mrge5uf9k94dq7cogsot20.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

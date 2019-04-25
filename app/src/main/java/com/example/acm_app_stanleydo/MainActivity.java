@@ -1,13 +1,9 @@
 package com.example.acm_app_stanleydo;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentContainer;
-import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,15 +12,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.example.acm_app_stanleydo.Resources;
-import com.example.acm_app_stanleydo.Announcements;
+import com.example.acm_app_stanleydo.fragments.Announcements;
+import com.example.acm_app_stanleydo.fragments.Home;
+import com.example.acm_app_stanleydo.fragments.Resources;
+import com.google.firebase.FirebaseApp;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -77,27 +75,63 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.home) {
-
+        if (id == R.id.Home) {
+            Home home = new Home();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, home);
+            fragmentTransaction.commit();
         } else if (id == R.id.Announcements) {
-            Announcements mainFragment = new Announcements();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, mainFragment);
+            Announcements announcements = new Announcements();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, announcements);
             fragmentTransaction.commit();
         } else if (id == R.id.Resources) {
             Resources resources = new Resources();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
+            android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, resources);
             fragmentTransaction.commit();
 
         } else if (id == R.id.Aboutus) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.insta) {
+            Uri uri = Uri.parse("http://instagram.com/stanleydoey");
+            Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
 
-        } else if (id == R.id.nav_send) {
+            likeIng.setPackage("com.instagram.android");
 
+            try {
+                startActivity(likeIng);
+            } catch (ActivityNotFoundException e) {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://instagram.com/stanleydoey")));
+            }
+        } else if (id == R.id.twitter) {
+            try {
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("twitter://user?screen_name=kanyewest"));
+                startActivity(intent);
+            } catch (Exception e) {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://twitter.com/kanyewest")));
+            }
+        } else if (id == R.id.linkedin) {
+            try {
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://linkedin.com/in/stanley-do"));
+                startActivity(intent);
+            } catch (Exception e) {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://linkedin.com/in/stanley-do")));
+            }
+        } else if (id == R.id.facebook) {
+            try {
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://www.facebook.com/zuck"));
+                startActivity(intent);
+            } catch (Exception e) {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://www.facebook.com/zuck")));
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
